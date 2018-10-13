@@ -79,7 +79,7 @@
                 </div> -->
                 
                   <!-- Step 1 -->
-                  <fieldset id="tourstep1">
+                <fieldset id="tourstep1">
 
                       <!-- CONTACT_PERSON_NAME: new FormControl('Richard Dolan', Validators.minLength(17)),
                       CONTACT_PERSON_EMAIL: new FormControl('dolan@mail.me'  ),
@@ -182,54 +182,54 @@
                     </div>  
                 </fieldset>
 
-                  <!-- Step 3 -->
-                  <fieldset id="tourstep3" style="display:none">
+                <!-- Step 3 -->
+                <fieldset id="tourstep3" style="display:none">
 
-                      <div class="row">
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <!-- <label for="city">CITY</label> -->
-                              <input type="text"  [formControl]="city"  class="form-control round" placeholder="City">
-                            </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <!-- <label for="city">CITY</label> -->
+                            <input type="text"  [formControl]="city"  class="form-control round" placeholder="City">
                           </div>
-                      </div>
+                        </div>
+                    </div>
 
-                      <div class="row">
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <!-- <label for="address">ADDRESS</label> -->
-                              <input type="text"  [formControl]="address"  class="form-control round" placeholder="Address">
-                            </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <!-- <label for="address">ADDRESS</label> -->
+                            <input type="text"  [formControl]="address"  class="form-control round" placeholder="Address">
                           </div>
-                      </div>
+                        </div>
+                    </div>
 
-                      <div class="row">
-                          <div class="col-md-12">
-                            <div class="form-group">
-                              <!-- <label for="inquiry">MESSAGE</label> -->
-                              <textarea [formControl]="inquiry" placeholder="Type your message here.."  class="form-control round"></textarea>
-                              
-                            </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <!-- <label for="inquiry">MESSAGE</label> -->
+                            <textarea [formControl]="inquiry" placeholder="Type your message here.."  class="form-control round"></textarea>
+                            
                           </div>
-                      </div>
-      
-                      <div class="row">
-                          <div class="col-md-6">
-                            <div class="form-group text-left">
-                              <button type="button" class="primary-btn text-danger float-left" onclick="$('#tourstep3').hide(); $('#tourstep2').show()">
-                                <i></i> Previous
+                        </div>
+                    </div>
+    
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group text-left">
+                            <button type="button" class="primary-btn text-danger float-left" onclick="$('#tourstep3').hide(); $('#tourstep2').show()">
+                              <i></i> Previous
+                            </button>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group text-right">
+                              <button type="submit" [disabled]="talkToUs.invalid" onclick="$('#tourstep3').hide(); $('#tourstep1').show()" class="primary-btn banner-btn float-right">
+                                <i></i> Submit
                               </button>
-                             </div>
-                          </div>
-                          <div class="col-md-6">
-                             <div class="form-group text-right">
-                                <button type="submit" [disabled]="talkToUs.invalid" class="primary-btn banner-btn float-right">
-                                  <i></i> Submit
-                                </button>
-                              </div>
-                          </div>
-                      </div>  
-                  </fieldset>
+                            </div>
+                        </div>
+                    </div>  
+                </fieldset>
 
               </form>
             </div>

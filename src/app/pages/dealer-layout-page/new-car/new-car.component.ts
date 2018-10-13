@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CarService } from 'app/services/car/car.service';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { ToastrService } from 'app/services/toastr/toastr.service';
+import { EmailNotificationService } from 'app/services/email-notification/email-notification.service';
 
 @Component({
   selector: 'app-new-car',
@@ -17,8 +18,10 @@ export class NewCarComponent implements OnInit {
     private router: Router,
     private carService: CarService,
     private formBuilder: FormBuilder,
-    private service: ToastrService
-  ) { }
+    private service: ToastrService,
+    private emailNofication: EmailNotificationService) { 
+
+    }
 
   ngOnInit() {
     this.newCarForm = this.formBuilder.group({
@@ -208,9 +211,36 @@ export class NewCarComponent implements OnInit {
     return this.newCarForm.value
   }
 
+  get newCarEmail(){
+    return {
+      sender: "guest@directfromdubai.com",
+      body: this.carDetails
+    }
+  }
+
 
   registerNewCar(){
     this.carService.uploadCarDetails(this.carDetails)
+    this.sendNewCarEmail()
+    this.service.typeSuccess()
+    this.resetNewCarForm()
+    this.redirectToInventory()
+    
+  }
+
+  sendNewCarEmail(){
+    this.emailNofication.newCar(this.newCarEmail)
+
+  }
+
+  //reset form
+  resetNewCarForm(){
+    this.newCarForm.reset()
+  }
+
+  //redirect after uploading car info
+  redirectToInventory(){
+    this.router.navigate(['dealers/inventory'])
   }
 
 }

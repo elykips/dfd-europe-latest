@@ -18,8 +18,187 @@
                         <div class="card-block">
                             
                             <form  [formGroup]="dealerForm" (submit)="registerDealer()">
+
+                                  <!-- Step 1 -->
+                                <fieldset id="tourstep1">
+                                        <!-- get contact_person(){
+                                            return this.dealerForm.get(' CONTACT_PERSON')
+                                          }
+                                        
+                                          get dealership(){
+                                            return this.dealerForm.get('DEALERSHIP_NAME')
+                                          }
+                                        
+                                          get category(){
+                                            return this.dealerForm.get('CATEGORY')
+                                          }
+                                        
+                                          get car_brands_sold(){
+                                            return this.dealerForm.get('CAR_BRANDS_SOLD')
+                                          }
+                                        
+                                          get capacity_cars(){
+                                            return this.dealerForm.get('CAPACITY_CARS')
+                                          }
+                                        
+                                          get capacity_staff(){
+                                            return this.dealerForm.get('CAPACITY_STAFF')
+                                          }
+                                        
+                                          get city(){
+                                            return this.dealerForm.get('CITY')
+                                          }
+                                        
+                                          get address(){
+                                            return this.dealerForm.get('ADDRESS')
+                                          }
+                                        
+                                          get email(){
+                                            return this.dealerForm.get('EMAIL')
+                                          }
+                                        
+                                          get password(){
+                                            return this.dealerForm.get('CONTACT_PASSWORD')
+                                          } -->
+                                    <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                        <!-- <label  for="name">CONTACT PERSON</label> -->
+                                        <input type="text" [formControl]="contact_person"  class="form-control round" placeholder="Contact Person">
+                                        </div>
+                                    </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <!-- <label for="email">EMAIL ADDRESS</label> -->
+                                            <input type="text"  [formControl]="dealership"  class="form-control round" placeholder="Company Name">
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                            <select class="form-control round" [formControl]="category" id="category">
+                                                <option value="">--Choose Category--</option>
+                                                <option value="Car Dealer">Car Dealer</option>
+                                                <option value="Individual">Individual</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                          
+                                            <div class="form-group">
+                                            <button type="button" [disabled]="category.invalid && dealership.invalid &&  contact_person.invalid" class="primary-btn banner-btn btn-block" onclick="$('#tourstep1').hide(); $('#tourstep2').show()">
+                                                <i></i> Next
+                                            </button>
+                                            </div>
+                                    </div>
+                                    </div>
+
+                                </fieldset>
+
+                                 <!-- Step 2 -->
+                                <fieldset id="tourstep2" style="display:none">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                <!-- <label for="dealership">DEALERSHIP NAME</label> -->
+                                                <textarea type="text"  [formControl]="car_brands_sold"  class="form-control round" placeholder="Brands of cars you sell"></textarea>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                        
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                            <div class="form-group">
+                                                <!-- <label for="city">CITY</label> -->
+                                                <input type="text"  [formControl]="capacity_cars"  class="form-control round" placeholder="Average cars sold per month">
+                                            </div>
+                                            </div>
+                                        </div>
+                    
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                <input type="text"  [formControl]="city"  class="form-control round" placeholder="City">
+                                                </div>
+                                            </div>
+                                        </div>
+                    
+                    
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <!-- <button type="button" class="primary-btn text-danger btn-block" onclick="$('#tourstep2').hide(); $('#tourstep1').show()">
+                                                        <i></i> Previous
+                                                    </button> -->
+                                                    <button type="button" class="primary-btn banner-btn btn-block" onclick="$('#tourstep2').hide(); $('#tourstep3').show()">
+                                                        <i></i> Next
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div>  
+                                </fieldset>
+      
+                                <!-- Step 3 -->
+                                <fieldset id="tourstep3" style="display:none">
+                
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                            <!-- <label for="city">CITY</label> -->
+                                            <input type="text"  [formControl]="address"  class="form-control round" placeholder="Address">
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                            <!-- <label for="address">ADDRESS</label> -->
+                                            <input type="text"  [formControl]="email"  class="form-control round" placeholder="Email">
+                                            </div>
+                                        </div>
+                                    </div>
+                
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                            <!-- <label for="inquiry">MESSAGE</label> -->
+                                            <input type="password" [formControl]="password"  class="form-control round" placeholder="Create Password">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="row">
+                                        <!-- <div class="col-md-6">
+                                            <div class="form-group text-left">
+                                            <button type="button" class="primary-btn text-danger float-left" onclick="$('#tourstep3').hide(); $('#tourstep2').show()">
+                                                <i></i> Previous
+                                            </button>
+                                            </div>
+                                        </div> -->
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <button type="submit" [disabled]="dealerForm.invalid" class="primary-btn banner-btn btn-block">
+                                                <i></i> Submit
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </fieldset>
                               
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <div class="col-md-12">
                                         <input type="text"  [formControl]="dealer" class="form-control round" id="dealer" placeholder="Dealership Name">
                                     </div>
@@ -52,9 +231,8 @@
                                 <div class="form-group">
                                     <div class="col-md-12">
                                         <button type="submit" [disabled]="dealerForm.invalid" class="primary-btn banner-btn btn-block"> Register </button>
-                                        <!-- <a class="primary-btn banner-btn btn-block" routerLink="/guests/sign-in" >Register</a> -->
                                     </div>
-                                </div>
+                                </div> -->
                                
                                 
                             </form>

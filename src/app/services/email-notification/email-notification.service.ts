@@ -10,4 +10,13 @@ export class EmailNotificationService {
     console.log("Body:", msg)
   }
 
+  signUp(msg){
+    console.log('New Sign Up: ', msg.sender )
+    console.log("Body:", msg)
+  }
+
+  newCar(msg){
+    console.log("New Car Uploaded By:", msg.sender)
+    console.log('Body:', msg)
+  }
 }

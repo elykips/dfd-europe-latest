@@ -93,5 +93,10 @@ export class AboutUsComponent implements OnInit {
   contactUs(){
     this.emailNotification.contactUs(this.talkToUsEmail)
     this.toastrService.typeSuccess()
+    this.resetTalkToUsForm()
+  }
+
+  resetTalkToUsForm(){
+    this.talkToUs.reset()
   }
 }

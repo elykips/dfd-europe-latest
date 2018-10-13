@@ -17,6 +17,7 @@ import { ToastrService } from './services/toastr/toastr.service';
 import { ToastsManager, ToastOptions, ToastModule } from 'ng2-toastr';
 import { CarService } from './services/car/car.service';
 import { EmailNotificationService } from './services/email-notification/email-notification.service';
+import { DealerService } from './services/dealer/dealer.service';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ BrowserAnimationsModule,
         ToastsManager,
         ToastOptions,
         CarService,
-        EmailNotificationService
+        EmailNotificationService,
+        DealerService
         
     ],
     bootstrap: [AppComponent]
