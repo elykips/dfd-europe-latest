@@ -1,0 +1,72 @@
+	<!-- Start Banner Area -->
+	<canvas class="home-slider-pages bg-transparent"></canvas>
+	<!-- <section class="banner-area-pages" id="home">
+
+	</section> -->
+  <!-- End Banner Area -->
+  
+  <!-- Project Area -->
+	<!-- <section> -->
+    <div class="container-fluid pt-5">
+        <div class="row pt-5">
+            <div  class="col-12 d-flex align-items-center justify-content-center">
+                <div class="card text-center width-400">
+                    <div class="card-header">
+                        <h2>Register Dealership</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-block">
+                            
+                            <form  [formGroup]="dealerForm" (submit)="registerDealer()">
+                              
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="text"  [formControl]="dealer" class="form-control round" id="dealer" placeholder="Dealership Name">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <select class="form-control round" [formControl]="category" id="category">
+                                            <option value="">--Select Your Category--</option>
+                                            <option value="Car Dealer">Car Dealer</option>
+                                            <option value="Expat">Expat Living In Dubai</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                  <div class="col-md-12">
+                                      <input type="email"  [formControl]="email" class="form-control round" id="email" placeholder="Your Email">
+                                  </div>
+                              </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="password"  [formControl]="password" class="form-control round" id="password" placeholder="Create Password">
+                                    </div>
+                                </div>
+                                
+
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <button type="submit" [disabled]="dealerForm.invalid" class="primary-btn banner-btn btn-block"> Register </button>
+                                        <!-- <a class="primary-btn banner-btn btn-block" routerLink="/guests/sign-in" >Register</a> -->
+                                    </div>
+                                </div>
+                               
+                                
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="float-center"><a routerLink="/guests/sign-in"  >I have an account already</a></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<!-- </section> -->
+	<!-- End Project Area -->

@@ -1,0 +1,240 @@
+	<!-- Start Banner Area -->
+	<canvas class="home-slider-pages bg-transparent"></canvas>
+	<!-- <section class="banner-area-pages" id="home">
+
+	</section> -->
+  <!-- End Banner Area -->
+  
+
+  
+	<!-- Our Story starts here-->
+  <section class="blog py-10 bg-white" id="story">
+      <div class="container pt-10">
+        <h3 class="text-center black mb-4 headline">Our Story</h3>
+        <div class="row">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-10">
+                <p class="text-center mt-4">DIRECT FROM DUBAI was established to assist car dealers from Europe to benefit from purchasing left hand drive cars from expats living in Dubai. We DO NOT buy cars ourselves but have availability of hundreds of cars at our finger tips throughout our database of cars. With our experience and expertise, of dealing with cars in Dubai, we could find you the perfect stock for your showroom at great prices. We would find you the car, register it under your company name and organize the shipping to your local port.</p>
+            </div>
+            <div class="col-md-1">
+            </div>
+        </div>
+      </div>
+  </section>
+
+	<!-- Our Story Ends here-->
+
+    
+   <!-- mission statement starts here -->
+	<section class="about p-10" id="mission">
+    <div class="container">
+      <h3 class="text-center black headline">Our Mission</h3>
+      <div class="row">
+        <div class="col-md-1">
+        </div>
+        <div class="col-md-10 text-center">
+              <p class="mt-4">Our mission is to setup a network of car dealers throughout Europe and supply traders with such high quality vehicles with great margins to become you number one supplier of cars.</p>
+              <a routerLink="#" class="primary-btn banner-btn"> Join Us</a>
+          <!-- </div> -->
+        </div>
+        <div class="col-md-1">
+        </div>
+      </div>
+      
+    </div>
+  </section>
+      <!-- mission statement ends here -->
+
+	<!-- Contact Us Area -->
+	<section class="contect py-10 bg-black" id="contect">
+      <div class="container">
+        <h3 class="text-center white mb-4 headline">Let's Get In Touch</h3>
+        <p class="text-center white mt-4">Please fill up the form and we'll be in touch soon.</p>
+        <div class="row mt-5 p-sm text-white">
+          <div class="col-lg-6 mt-3">
+            <p>We would like to know you more, kindly contact us using the folowing form. We look forward doing business together</p>
+            <p>
+              <i class="fa fa-map-marker" aria-hidden="true"></i>  0100, 20 Eldoret, Rift-Valley
+              Nairobi, Kenya</p>
+            <p>
+              <i class="fa fa-phone" aria-hidden="true"></i> +254 727 853761 
+              </p>
+            <p>
+              <i class="fa fa-globe" aria-hidden="true"></i> hello@directfromdubai.com 
+              </p>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-area">
+              <form [formGroup]="talkToUs" (submit)="contactUs()">
+                <br style="clear:both">
+                <!-- <div class="form-group">
+                  <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" id="subject" name="company" placeholder="Company" required>
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" id="message" placeholder="Message" maxlength="140" rows="2"></textarea>
+                </div> -->
+                
+                  <!-- Step 1 -->
+                  <fieldset id="tourstep1">
+
+                      <!-- CONTACT_PERSON_NAME: new FormControl('Richard Dolan', Validators.minLength(17)),
+                      CONTACT_PERSON_EMAIL: new FormControl('dolan@mail.me'  ),
+                      DEALERSHIP_NAME: new FormControl('Direct From Dubai Inc' ),
+                      AVERAGE_NUMBER_OF_CARS_PER_MONTH: new FormControl('500' ),
+                      CITY: new FormControl('Doha' ),
+                      ADDRESS: new FormControl('20, Aluguntugui Street, Accra, Ghana' ),
+                      INQUIRY: new FormControl('We can do business together. -->
+                  
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <!-- <label  for="name">CONTACT PERSON</label> -->
+                          <input type="text" [formControl]="name"  class="form-control round" placeholder="Contact Person">
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="row">
+                      <div class="col-md-12">
+                          <div class="form-group">
+                            <!-- <label for="email">EMAIL ADDRESS</label> -->
+                            <input type="text"  [formControl]="email"  class="form-control round" placeholder="dolan@mymail.com">
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                              <select class="form-control round" [formControl]="client_category" id="category">
+                                  <option value="">--Select Your Category--</option>
+                                  <option value="Car Dealer">Car Dealer</option>
+                                  <option value="Individual">Individual</option>
+                                  <!-- <option value="Other">Other</option> -->
+                              </select>
+                            </div>
+                        </div>
+                    </div>
+  
+                    
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group text-right">
+                              <button type="button" class="primary-btn banner-btn float-right" onclick="$('#tourstep1').hide(); $('#tourstep2').show()">
+                                <i></i> Next
+                              </button>
+                            </div>
+                      </div>
+                    </div>
+
+                </fieldset>
+
+                <!-- Step 2 -->
+                <fieldset id="tourstep2" style="display:none">
+                  <div class="row">
+                      <div class="col-md-12">
+                          <div class="form-group">
+                            <!-- <label for="dealership">DEALERSHIP NAME</label> -->
+                            <input type="text"  [formControl]="dealership"  class="form-control round" placeholder="Dealership Name">
+                          </div>
+                      </div>
+                  </div> 
+                  
+                  <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <!-- <label for="city">CITY</label> -->
+                          <input type="text"  [formControl]="capacity_cars"  class="form-control round" placeholder="Average Cars Per Month">
+                        </div>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <!-- <label for="capacity">AVERAGE NUMBER OF CARS PER MOTH</label> -->
+                            <input type="text"  [formControl]="capacity_staff"  class="form-control round" placeholder="Average Number Of Employees">
+                          </div>
+                        </div>
+                  </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group text-left">
+                            <button type="button" class="primary-btn text-danger float-left" onclick="$('#tourstep2').hide(); $('#tourstep1').show()">
+                              <i></i> Previous
+                            </button>
+                           </div>
+                        </div>
+                        <div class="col-md-6">
+                           <div class="form-group text-right">
+                              <button type="button" class="primary-btn banner-btn float-right" onclick="$('#tourstep2').hide(); $('#tourstep3').show()">
+                                <i></i> Next
+                              </button>
+                            </div>
+                        </div>
+                    </div>  
+                </fieldset>
+
+                  <!-- Step 3 -->
+                  <fieldset id="tourstep3" style="display:none">
+
+                      <div class="row">
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <!-- <label for="city">CITY</label> -->
+                              <input type="text"  [formControl]="city"  class="form-control round" placeholder="City">
+                            </div>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <!-- <label for="address">ADDRESS</label> -->
+                              <input type="text"  [formControl]="address"  class="form-control round" placeholder="Address">
+                            </div>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <!-- <label for="inquiry">MESSAGE</label> -->
+                              <textarea [formControl]="inquiry" placeholder="Type your message here.."  class="form-control round"></textarea>
+                              
+                            </div>
+                          </div>
+                      </div>
+      
+                      <div class="row">
+                          <div class="col-md-6">
+                            <div class="form-group text-left">
+                              <button type="button" class="primary-btn text-danger float-left" onclick="$('#tourstep3').hide(); $('#tourstep2').show()">
+                                <i></i> Previous
+                              </button>
+                             </div>
+                          </div>
+                          <div class="col-md-6">
+                             <div class="form-group text-right">
+                                <button type="submit" [disabled]="talkToUs.invalid" class="primary-btn banner-btn float-right">
+                                  <i></i> Submit
+                                </button>
+                              </div>
+                          </div>
+                      </div>  
+                  </fieldset>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Contact Us Area -->
